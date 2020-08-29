@@ -7,7 +7,7 @@ const cors = require('./cors');
 
 /* GET users listing. */
 router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, function (req, res, next) {
-  User.find().then( users => {
+  User.find().then(users => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.json(users);
